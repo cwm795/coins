@@ -13,12 +13,12 @@ var input = document.getElementById("dollarInput");
 
 input.addEventListener("keyup", function(event) {
     event.preventDefault();
-    if (event.keyCode == 13) {
-        input = input.value
-        f
+    if (event.keyCode === 13) {
+        input = input.value = "";
+        coinCounter();
 
 
-    }
+
 
 
     function coinCounter(input) {
@@ -31,7 +31,7 @@ input.addEventListener("keyup", function(event) {
         coinPurse.pennies = 0;
 
 
-        coin.quarters = Math.floor(input / .25);
+        coinPurse.quarters = Math.floor(input / .25);
         remainder = (input % .25);
         coinPurse.dimes = Math.floor(remainder / .10);
         remainder = (input % .10);
@@ -41,10 +41,9 @@ input.addEventListener("keyup", function(event) {
 
 
         return coinPurse;
+
     }
 
     var coins = coinCounter(input)
-    console.log();
-
-})
-;
+    }
+});
