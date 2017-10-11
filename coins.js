@@ -18,10 +18,11 @@ input.addEventListener("keyup", function(e) {
             coinPurse.quarters = Math.floor(input / .25);
             remainder = (input % .25);
             coinPurse.dimes = Math.floor(remainder / .10);
-            remainder = (input % .10);
+            remainder = (remainder % .10);
             coinPurse.nickels = Math.floor(remainder / .05);
-            remainder = remainder % .05;
+            remainder = (remainder % .05);
             coinPurse.pennies = Math.floor(remainder / .01);
+            remainder = (remainder % .01);
 
 
             return coinPurse;
@@ -29,7 +30,7 @@ input.addEventListener("keyup", function(e) {
         }
 
         var coins = coinCounter(input)
-        console.log(coins);
+        console.log(coins, "test");
     }
 
 
